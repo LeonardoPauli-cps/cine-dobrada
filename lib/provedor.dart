@@ -1,0 +1,20 @@
+import 'package:cinedobrada/app.dart';
+import 'package:cinedobrada/vm/cinema_vm.dart';
+import 'package:cinedobrada/vm/filme_vm.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+class Provedor extends StatelessWidget {
+  const Provedor({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        CinemaViewModel.novo(),
+        FilmesViewModel.novo(),
+      ],
+      child: const Aplicacao(),
+    );
+  }
+}
